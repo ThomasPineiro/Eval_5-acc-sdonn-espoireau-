@@ -1,6 +1,5 @@
 <?php
-echo'meh';
-
+//connection
 $bd = "host=localhost port=5432 dbname=bdpoireau user=admin password=admin";
 $connect = pg_connect($bd);
 
