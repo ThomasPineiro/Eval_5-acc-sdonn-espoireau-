@@ -57,20 +57,56 @@ include 'meh.php';
                      </tr>
                   </thead>
                   <tbody>
-                  
+                  <!--Afficher le stock-->
                   <?php
-                  foreach ($array_tab as $value)
+                  while($array_tab = pg_fetch_array($selec_tab))
                   {
-                  echo "<tr><td>" .$value.  "</td><td>zob</td></tr>";
+                  echo "<tr><td>" .$array_tab["pro_nom"].  "</td><td>".$array_tab["sum"]."</td></tr>";
                   }
                   ?>
                   </tbody>
                </table>
             </div>
             <!-- Tableau Fruits -->
-            <div class="tab-pane table-responsive" id="menu1">...</div>
+            <div class="tab-pane table-responsive" id="menu1">
+            <table class="table">
+                  <thead>
+                     <tr>
+                        <th id="name-column">Nom</th>
+                        <th>Qté</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                  <!-- Requête incorrecte (dans le fichier meh.php) -->
+                  <?php
+                  while($array_tab_f = pg_fetch_array($selec_tab_f))
+                  {
+                  echo "<tr><td>" .$array_tab_f["pro_nom"].  "</td><td>".$array_tab_f["sum"]."</td></tr>";
+                  }
+                  ?>
+                  </tbody>
+               </table>
+            </div>
             <!-- Tableau Légumes -->
-            <div class="tab-pane table-responsive" id="menu2">...</div>
+            <div class="tab-pane table-responsive" id="menu2">
+            <table class="table">
+                  <thead>
+                     <tr>
+                        <th id="name-column">Nom</th>
+                        <th>Qté</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                  <!-- Requête incorrecte (dans le fichier meh.php) -->
+                  <?php
+                  while($array_tab_l = pg_fetch_array($selec_tab_l))
+                  {
+                  echo "<tr><td>" .$array_tab_l["pro_nom"].  "</td><td>".$array_tab_l["sum"]."</td></tr>";
+                  }
+                  ?>
+                  </tbody>
+               </table>
+            </div>
          </div>
       </div>
       <!-- ///////// FIN Listes à gauche /////////////////-->
